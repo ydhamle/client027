@@ -24,9 +24,9 @@ jobs:
         run: dotnet workload install wasm-tools
       # Publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
-        run: dotnet publish ./c027/c027.csproj -c:Release -p:GHPages=true -o dist/c027 --nologo
+        run: dotnet publish ./c027.Client/c027.Client.csproj -c:Release -p:GHPages=true -o dist/c027.Client --nologo
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           BRANCH: gh-pages
-          FOLDER: dist/c027/wwwroot
+          FOLDER: dist/c027.Client/wwwroot
